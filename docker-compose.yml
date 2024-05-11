@@ -1,0 +1,27 @@
+version: '3'
+services:
+  julia:
+    image: terminalgatjl
+    container_name: terminalgatjl-julia
+    volumes:
+      - ./:/workspace/TerminalGat.jl
+    working_dir: /workspace/TerminalGat.jl
+    command: julia --project=/workspace/TerminalGat.jl
+
+  shell:
+    image: terminalgatjl
+    container_name: terminalgatjl-julia
+    volumes:
+      - ./:/workspace/TerminalGat.jl
+    working_dir: /workspace/TerminalGat.jl
+    command: /bin/bash
+
+  web:
+    image: terminalgatjl
+    container_name: terminalgatjl-packagedocs
+    volumes:
+      - ./:/workspace/TerminalGat.jl
+    working_dir: /workspace/TerminalGat.jl
+    ports:
+      - "8000:8000"
+    command: make web
