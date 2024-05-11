@@ -52,12 +52,11 @@ jobs:
         with:
           version: '1'
       - uses: julia-actions/cache@v2
-      - name: Install gat_jll
-        run: julia -e 'using Pkg; Pkg.develop(url="https://github.com/terasakisatoshi/gat_jll.jl")'
       - name: Configure doc environment
         shell: julia --project=docs --color=yes {0}
         run: |
           using Pkg
+          Pkg.add(url="https://github.com/terasakisatoshi/gat_jll.jl")
           Pkg.develop(PackageSpec(path=pwd()))
           Pkg.instantiate()
       - uses: julia-actions/julia-buildpkg@v1
