@@ -8,8 +8,11 @@ build:
 	-rm -f Manifest.toml docs/Manifest.toml
 	docker build -t ${DOCKER_IMAGE} . --build-arg NB_UID=`id -u`
 	docker compose build
-	docker compose run --rm shell julia --project=@. -e 'using Pkg; Pkg.instantiate()'
-	docker compose run --rm shell julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+	docker compose run --rm shell julia -e 'using Pkg; \
+	    Pkg.rm("gat_jll"); \
+	    Pkg.develop(url="https://github.com/terasakisatoshi/gat_jll.jl.git"); \
+	    Pkg.instantiate(); \
+	    Pkg.precompile()'
 
 # Excecute in docker container
 web: docs
