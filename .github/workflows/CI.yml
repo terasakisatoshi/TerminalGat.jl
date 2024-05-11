@@ -35,6 +35,8 @@ jobs:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v2
+      - name: Install gat_jll.jl
+        run: julia -e 'using Pkg; Pkg.add("https://github.com/terasakisatoshi/gat_jll.jl")'
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
   docs:
