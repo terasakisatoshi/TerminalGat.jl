@@ -49,6 +49,8 @@ RUN chown -R ${NB_UID} /workspace/TerminalGat.jl
 USER ${USER}
 
 RUN rm -f Manifest.toml && julia -e 'using Pkg; \
+    Pkg.rm("gat_jll"); \
+    Pkg.develop(url="https://github.com/terasakisatoshi/gat_jll.jl.git"); \
     Pkg.instantiate(); \
     Pkg.precompile()' && \
     # Check Julia version \
