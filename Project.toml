@@ -10,6 +10,7 @@ TerminalPager = "0c614874-6106-40ed-a7c2-2f1cd0bff883"
 gat_jll = "b88765aa-e0a2-5b02-b897-840ea4e6307e"
 
 [compat]
+IOCapture = "0.2"
 julia = "1.6.7"
 
 [extras]
