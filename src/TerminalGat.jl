@@ -18,7 +18,7 @@ function gat(filename::AbstractString)
 end
 
 function gat(md::Markdown.MD)
-    str = sprint(show, MIME"text/plain"(), md, context = :color => false)
+    str = sprint(show, MIME"text/plain"(), md, context=:color => false)
     open(pipeline(`$(gat_jll.gat()) --force-color -l julia`), "w", stdout) do f
         println(f, str)
     end
