@@ -1,3 +1,9 @@
+⚠️
+
+This repository is deprecated. Please use https://github.com/AtelierArith/TerminalGat.jl instead.
+
+---
+
 # TerminalGat [![Build Status](https://github.com/terasakisatoshi/TerminalGat.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/terasakisatoshi/TerminalGat.jl/actions/workflows/CI.yml?query=branch%3Amain) [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://terasakisatoshi.github.io/TerminalGat.jl/stable/) [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://terasakisatoshi.github.io/TerminalGat.jl/dev/)
 
 ## Description
